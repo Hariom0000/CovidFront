@@ -1,0 +1,43 @@
+.center {
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px;
+  }
+.mynavbar{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: azure;
+  height: auto;
+}
+.Table
+    {
+        display: table;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: bold;
+        text-align: center;
+        background-color: antiquewhite;
+    }
+    .Row
+    {
+        display: table-row;
+        background-color: lightgray;
+    }
+    .Cell
+    {
+        display: table-cell;
+        border: solid;
+        border-width: thin;
+        padding-left: 5px;
+        padding-right: 5px;
+    }

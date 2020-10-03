@@ -1,0 +1,27 @@
+<div class="container-fluid center">
+  <nav class="navbar navbar-light bg-light">
+      <span class="navbar-text" >
+        Search Covid Affected Country By Country Code
+      </span>
+    </nav>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <form class="form-inline" style="margin-top: 7px;">
+          <div class="form-group" style="padding-right: 10px;">
+            <input type="text" class="form-control" 
+            #exampleInputName2
+            placeholder="Country Code">
+          </div>
+          <button type="submit" (click)="countryByCode(exampleInputName2.value)" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a (click)="clickBack()"><span class="glyphicon glyphicon-arrow-left"></span><p>Back</p></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="text-danger alert" *ngIf="showErrorMsg">
+    <strong>{{ errorMsg }}</strong>
+  </div>
+</div>

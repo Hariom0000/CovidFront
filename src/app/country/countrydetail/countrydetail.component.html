@@ -1,0 +1,120 @@
+<div class="center">`
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-lg-6">Country Details</div>
+                <div class="col-lg-6"><ul class="nav navbar-nav navbar-right">
+                    <li><a (click)="clickBack()" style="padding: 0%;"><span class="glyphicon glyphicon-arrow-left"></span> Back</a></li>
+                  </ul></div>
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-lg-6">
+                <div class="panel-body" style="background-color: aliceblue;">
+                    <div class="row">
+                        <div class="col-lg-6">Country Name:</div>
+                        <div class="col-lg-6">{{ countryCovid?.country }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel-body" style="background-color: aliceblue;">
+                    <div class="row">
+                        <div class="col-lg-4">CountryCode:</div>
+                        <div class="col-lg-8">{{ countryCovid?.code }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-6">Confirmed Case:</div>
+                         <div class="col-lg-6">{{ countryCovid?.confirmed }}</div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-4">Latitude:</div>
+                         <div class="col-lg-8">{{ countryCovid?.latitude }}</div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+        
+         <div class="row">
+            <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-6">Recovered:</div>
+                         <div class="col-lg-6">{{ countryCovid?.recovered }}</div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-4">Longitude:</div>
+                         <div class="col-lg-8">{{ countryCovid?.longitude }}</div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="row">
+            <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-6">Deaths:</div>
+                         <div class="col-lg-6">{{ countryCovid?.deaths }}</div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-4">LastChange:</div>
+                         <div class="col-lg-8">{{ countryCovid?.lastChange }}</div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+
+         <div class="row">
+            <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-6">Critical:</div>
+                         <div class="col-lg-6">{{ countryCovid?.critical }}</div>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-lg-6">
+                 <div class="panel-body" style="background-color: aliceblue;">
+                     <div class="row">
+                         <div class="col-lg-4">LastUpdate:</div>
+                         <div class="col-lg-8">{{ countryCovid?.lastUpdate }}</div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+    </div>
+    <pre *ngFor="let comment of countryCovid?.comments" >
+        {{ comment.comment }}
+    </pre>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)" *ngIf="showCommentBox">
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" rows="5"
+            placeholder="Enter full name" formControlName="comment" id="comment"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Comment</button>
+    </form>
+    <div class="row" *ngIf="showAddComment">
+        <div class="col-lg-12"><button class="btn primary" style="float: right;"(click)="addComment()">Comment</button></div>
+    </div>
+</div>

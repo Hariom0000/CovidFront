@@ -1,0 +1,58 @@
+<div class="center">
+    <h1 class="text-center" i18n="home|home header@@homeheader">
+      Country wise Covid Details
+    </h1>
+    <div style="margin: 20px;"></div>
+    <div class="container-fluid" style="width: 70%;align-self: start;">
+      <div class="row">
+        <div class="col-md-12 covid-overview">
+          <h3>Covid Cases Overview</h3>
+        </div>
+      </div>
+     <div class="row">
+        <div class="col-md-6">
+          <p>Confirmed Cases</p>
+        </div>
+        <div class="col-md-6">
+          <p>{{ totalCount?.confirmed }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>Critical Cases</p>
+        </div>
+        <div class="col-md-6">
+          <p>{{ totalCount?.critical }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" >
+          <p>Deaths</p>
+        </div>
+        <div class="col-md-6">
+          <p>{{ totalCount?.deaths }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6" >
+          <p>Recovered</p>
+        </div>
+        <div class="col-md-6">
+          <p>{{ totalCount?.recovered }}</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin: 20px;"></div>
+    <div class="container-fluid" style="width: 70%;align-self: start;">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="list-group">
+            <a routerLink = "/home" class="list-group-item list-group-item-action disabled"><p>For more Info</p></a>
+              <a routerLink = "/countries" class="list-group-item list-group-item-action"><p>List of countries</p></a>
+            <a routerLink = "/country-by-name" class="list-group-item list-group-item-action"><p>Check Covid Cases by country Name</p></a>
+            <a routerLink = "/country-by-code" class="list-group-item list-group-item-action"><p>Check Covid Cases by country code</p></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

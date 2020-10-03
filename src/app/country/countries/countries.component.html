@@ -1,0 +1,68 @@
+<div class="container-fluid center">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <form class="form-inline" style="margin-top: 7px;">
+          <div class="form-group" style="padding-right: 10px;">
+            <input type="text" class="form-control" #exampleInputName2 placeholder="countryName">
+          </div>
+          <button type="submit" (click)="searchData(exampleInputName2.value)" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+        </form>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li ><a (click)="clickBack()"><span class="glyphicon glyphicon-arrow-left"></span><p>Back</p></a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="Table" *ngIf='countries && countries.length'>
+    <div class="Title">
+        <h4>List of Countries</h4>
+    </div>
+    <div class="Heading">
+        <div class="Cell">
+            <p>Country Name</p>
+        </div>
+        <div class="Cell">
+            <p>Alpha2code</p>
+        </div>
+        <div class="Cell">
+            <p>Alpha3code</p>
+        </div>
+        <div class="Cell">
+          <p>Latitude</p>
+        </div>
+        <div class="Cell">
+          <p>Longitude</p>
+        </div>
+        <div class="Cell">
+          <p>Favourite</p>
+        </div>
+        <div class="Cell">
+          <p>Allow Favourite</p>
+        </div>
+    </div>
+    <div class="Row" *ngFor='let country of countries'>
+        <div class="Cell">
+            <p (click)="countryByName(country.name)">{{ country.name }}</p>
+        </div>
+        <div class="Cell">
+            <p (click)=" (country.alpha2code)">{{ country.alpha2code }}</p>
+        </div>
+        <div class="Cell">
+            <p>{{ country.alpha3code }}</p>
+        </div>
+        <div class="Cell">
+            <p>{{ country.latitude }}</p>
+        </div>
+        <div class="Cell">
+           <p>{{ country.longitude }}</p>
+        </div>
+        <div class="Cell">
+          <p><span [ngClass]="(country.favourite)?'glyphicon glyphicon-star':'glyphicon glyphicon-star-empty'"></span></p>
+        </div>
+        <div class="Cell">
+          <button class="btn-primary" (click)="updateFavourite(country)"><p>Add to favourite</p></button>
+        </div>
+    </div>
+  </div>
+</div>
