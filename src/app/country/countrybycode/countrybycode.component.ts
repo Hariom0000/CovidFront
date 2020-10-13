@@ -25,9 +25,14 @@ export class CountrybycodeComponent implements OnInit {
       this.countryService.getCountryByCode<CountryCovid>(name)
       .subscribe(
         (resultData)=>{
+          if(resultData === null){
+            this.errorMsg='No country found with this code '+name
+            this.showErrorMsg=true
+          }else{
+            this.countryService.setCountryCovid(resultData);
+            this.router.navigate(['/countrydetail']);
+          }
           console.log(resultData);
-          this.countryService.setCountryCovid(resultData);
-          this.router.navigate(['/countrydetail']);
         },
         error=> {
           this.errorMsg='Something went wrong, we apologies for the inconvinence.'
